@@ -1,14 +1,15 @@
 import random
 
+n= int (input("ingrese la cantidad de grupos a formar: " ))
 def crear_grupos(nombres):
-    grupos = [[] for _ in range(5)]  # Crear una lista de cinco grupos vacíos
+    grupos = [[] for _ in range(n)]  # Crear una lista de grupos vacíos
     
     # Mezclar los nombres
     nombres_mezclados = random.sample(nombres, len(nombres))
     
     # Asignar los nombres a los grupos
     for i, nombre in enumerate(nombres_mezclados):
-        grupo = i % 5  # Asignar a un grupo según el índice
+        grupo = i % n  # Asignar a un grupo según el índice
         grupos[grupo].append(nombre)
     
     return grupos
